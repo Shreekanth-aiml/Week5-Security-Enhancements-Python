@@ -1,0 +1,63 @@
+WEEK 5 - SECURITY TEST RESULTS
+
+Application: Secure Python Login Application
+
+Test 1: Correct Password
+Input:
+Username: admin
+Password: StrongPassword@123
+
+Expected Result:
+Login successful!
+
+Status:
+PASSED
+
+
+Test 2: Incorrect Password
+Input:
+Username: admin
+Password: WrongPassword
+
+Expected Result:
+Invalid username or password.
+
+Status:
+PASSED
+
+
+Test 3: Empty Username
+Input:
+Username: [empty]
+
+Expected Result:
+Invalid username.
+
+Status:
+PASSED
+
+
+Test 4: Empty Password
+Input:
+Username: admin
+Password: [empty]
+
+Expected Result:
+Password cannot be empty.
+
+Status:
+PASSED
+
+
+Security Verification:
+
+1. Password is not stored as plain text.
+2. Password hashing uses PBKDF2-HMAC-SHA256.
+3. A random salt is generated for each password.
+4. Password input is hidden using getpass.
+5. Empty username and password inputs are rejected.
+6. Password comparison uses secrets.compare_digest().
+7. Incorrect login attempts return a generic error message.
+
+Overall Result:
+All security and functionality tests passed successfully.
